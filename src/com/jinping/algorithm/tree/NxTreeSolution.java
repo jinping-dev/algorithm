@@ -1,4 +1,4 @@
-package com.jinping.algorithm;
+package com.jinping.algorithm.tree;
 
 import java.util.*;
 
