@@ -9,8 +9,8 @@ package com.jinping.algorithm.huawei;
 public class MergeArray {
 
     public static void main(String[] args) {
-        int[] nums1 = {1,3,5,6,10,12,16,17};
-        int[] nums2 = {2,4,9,100};
+        int[] nums1 = {1,2,3};
+        int[] nums2 = {2,5,6};
         int[] result = merge(nums1,nums2);
         for (int s:result){
             System.out.print(s+",");
@@ -19,23 +19,22 @@ public class MergeArray {
 
     private static int[] merge(int[] nums1,int[]nums2) {
         int[] result =new int[ nums1.length+ nums2.length];
-        int nums1_index = 0,nums2_index = 0;
-        while (nums1_index < nums1.length || nums2_index < nums2.length){
-            if (nums1_index > nums1.length - 1 ){
-                result[nums1_index + nums2_index ] = nums2[nums2_index];
-                nums2_index ++;
-            }else if(nums2_index > nums2.length - 1){
-                result[nums1_index + nums2_index] = nums1[nums1_index];
-                nums1_index ++;
-            }else if (nums1[nums1_index] > nums2[nums2_index]){
-                result[nums1_index + nums2_index] = nums2[nums2_index];
-                nums2_index ++;
+        int nums1Index = 0,nums2Index = 0;
+        while (nums1Index < nums1.length || nums2Index < nums2.length){
+            if (nums1Index > nums1.length - 1 ){
+                result[nums1Index + nums2Index ] = nums2[nums2Index];
+                nums2Index ++;
+            }else if(nums2Index > nums2.length - 1){
+                result[nums1Index + nums2Index] = nums1[nums1Index];
+                nums1Index ++;
+            }else if (nums1[nums1Index] > nums2[nums2Index]){
+                result[nums1Index + nums2Index] = nums2[nums2Index];
+                nums2Index ++;
             }else {
-                result[nums1_index + nums2_index] = nums1[nums1_index];
-                nums1_index ++;
+                result[nums1Index + nums2Index] = nums1[nums1Index];
+                nums1Index ++;
             }
         }
         return result;
-
     }
 }
