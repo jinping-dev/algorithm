@@ -8,13 +8,13 @@ import java.util.concurrent.locks.ReentrantLock;
  * @Date 2020/12/8 3:01 下午
  * @Created by tinner
  */
-public class Test01 {
+public class TestPark {
 
     static ReentrantLock lock = new ReentrantLock();
     public static void main(String[] args) {
-        Thread t1 = new Thread(Test01::testSync);
+        Thread t1 = new Thread(TestPark::testSync);
 
-        Thread t2 = new Thread(Test01::testSync);
+        Thread t2 = new Thread(TestPark::testSync);
         t1.setName("t1");
         t2.setName("t2");
 
