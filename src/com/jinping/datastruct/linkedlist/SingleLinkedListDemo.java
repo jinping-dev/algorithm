@@ -18,42 +18,42 @@ public class SingleLinkedListDemo {
         HeroNode heroNode2 = new HeroNode(2, "卢俊义", "玉麒麟");
         HeroNode heroNode3 = new HeroNode(3, "吴用", "智多星");
         HeroNode heroNode4 = new HeroNode(4, "林冲", "豹子头");
-
+//
         SingleLinkedList list = new SingleLinkedList();
         list.addByOrder(heroNode1);
         list.addByOrder(heroNode4);
         list.addByOrder(heroNode3);
         list.addByOrder(heroNode2);
-
-        list.update(new HeroNode(3, "小小小", "asd"));
-        list.display();
-
-        System.out.println("有效的节点个数为：" + getLength(list.getHead()));
-        System.out.println("倒数第2个元素为：" + getLastIndexNode(list.getHead(), 2));
-//        reversetList(list.getHead());
+//
+//        list.update(new HeroNode(3, "小小小", "asd"));
 //        list.display();
-
-        reversePrint(list.getHead());
-
-        System.out.println("==============合并");
-        SingleLinkedList list1 = new SingleLinkedList();
-        list1.addByOrder(heroNode1);
-        list1.addByOrder(heroNode4);
-        SingleLinkedList list2 = new SingleLinkedList();
-        list2.addByOrder(heroNode2);
-        list2.addByOrder(heroNode3);
-        HeroNode result = mergeTwoLists(list1.getHead().next, list2.getHead().next);
-
-        HeroNode temp = result;
-        while (true) {
-            if (temp == null) {
-                break;
-            }
-//            输出节点信息
-            System.out.println(temp);
-            temp = temp.next;
-        }
-
+//
+//        System.out.println("有效的节点个数为：" + getLength(list.getHead()));
+//        System.out.println("倒数第2个元素为：" + getLastIndexNode(list.getHead(), 2));
+////        reversetList(list.getHead());
+////        list.display();
+//
+//        reversePrint(list.getHead());
+//
+//        System.out.println("==============合并");
+//        SingleLinkedList list1 = new SingleLinkedList();
+//        list1.addByOrder(heroNode1);
+//        list1.addByOrder(heroNode4);
+//        SingleLinkedList list2 = new SingleLinkedList();
+//        list2.addByOrder(heroNode2);
+//        list2.addByOrder(heroNode3);
+//        HeroNode result = mergeTwoLists(list1.getHead().next, list2.getHead().next);
+//
+//        HeroNode temp = result;
+//        while (true) {
+//            if (temp == null) {
+//                break;
+//            }
+////            输出节点信息
+//            System.out.println(temp);
+//            temp = temp.next;
+//        }
+        reversetList(list.getHead());
 
     }
 
@@ -125,8 +125,8 @@ public class SingleLinkedListDemo {
         HeroNode revertsetNode = new HeroNode(0, "", "");
         //遍历原来的链表，每遍历一个节点，将其取出，并放在新的链表revertsetNode的最前端
         while (current != null) {
-
-            //比如：当前current是1，next存的是2，1->2变为1->null,新的链表：head->1,然后current=2
+//            1,2,3
+            //比如：当前current是1，next存的是2，1->2变为1->null(新的链表),新的链表：head->1,然后current=2
             //然后2进来了，next存的是3，2->3变为2->1,新的链表:head->2->1。然后current=3
 
             //先暂时保存当前节点的下一个节点
