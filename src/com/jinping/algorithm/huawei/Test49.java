@@ -16,52 +16,40 @@ public class Test49 {
             CountDownLatch countDownLatch = new CountDownLatch(4);
             AlternativePrint alternativePrint = new AlternativePrint();
             //创建四个线程
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        for (int i = 0; i < n; i++) {
-                            alternativePrint.printA();
-                        }
-                    } finally {
-                        countDownLatch.countDown();
+            new Thread(() -> {
+                try {
+                    for (int i = 0; i < n; i++) {
+                        alternativePrint.printA();
                     }
+                } finally {
+                    countDownLatch.countDown();
                 }
             }).start();
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        for (int i = 0; i < n; i++) {
-                            alternativePrint.printB();
-                        }
-                    } finally {
-                        countDownLatch.countDown();
+            new Thread(() -> {
+                try {
+                    for (int i = 0; i < n; i++) {
+                        alternativePrint.printB();
                     }
+                } finally {
+                    countDownLatch.countDown();
                 }
             }).start();
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        for (int i = 0; i < n; i++) {
-                            alternativePrint.printC();
-                        }
-                    } finally {
-                        countDownLatch.countDown();
+            new Thread(() -> {
+                try {
+                    for (int i = 0; i < n; i++) {
+                        alternativePrint.printC();
                     }
+                } finally {
+                    countDownLatch.countDown();
                 }
             }).start();
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        for (int i = 0; i < n; i++) {
-                            alternativePrint.printD();
-                        }
-                    } finally {
-                        countDownLatch.countDown();
+            new Thread(() -> {
+                try {
+                    for (int i = 0; i < n; i++) {
+                        alternativePrint.printD();
                     }
+                } finally {
+                    countDownLatch.countDown();
                 }
             }).start();
             try {

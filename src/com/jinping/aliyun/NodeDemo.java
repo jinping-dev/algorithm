@@ -31,16 +31,15 @@ public class NodeDemo {
         Node head = node;
         while(head.next != null && head.next.next != null){
             // 开始反转
-            Node temp1 = head.next;
-            Node temp2 = temp1.next;
-            head.next = temp2;
-            temp1.next = temp2.next;
-            temp2.next = temp1;
+            Node next1 = head.next;
+            Node next2 = next1.next;
+            head.next = next2;
+            next1.next = next2.next;
+            next2.next = next1;
             // dummy 指针前移
-            head = temp1;
+            head = next1;
         }
         return head;
-
     }
 }
 
