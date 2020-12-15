@@ -12,9 +12,9 @@ public class TestPark {
 
     static ReentrantLock lock = new ReentrantLock();
     public static void main(String[] args) {
-        Thread t1 = new Thread(TestPark::testSync);
+        Thread t1 = new Thread(Test01::testSync);
 
-        Thread t2 = new Thread(TestPark::testSync);
+        Thread t2 = new Thread(Test01::testSync);
         t1.setName("t1");
         t2.setName("t2");
 
