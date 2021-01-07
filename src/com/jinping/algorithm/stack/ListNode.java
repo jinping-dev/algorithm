@@ -4,7 +4,7 @@ import java.util.Stack;
 
 /**
  * @Classname ListNode
- * @Description 用两个栈实现一个先进先出的队列
+ * @Description 用两个栈实现一个先进先出的队列:q
  * @Date 2021/1/5 3:08 下午
  * @Created by jinping
  */
