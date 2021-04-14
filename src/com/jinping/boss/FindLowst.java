@@ -25,11 +25,7 @@ public class FindLowst {
         if (k == 0) { // 排除 0 的情况
             return vec;
         }
-        PriorityQueue<Integer> queue = new PriorityQueue<Integer>(new Comparator<Integer>() {
-            public int compare(Integer num1, Integer num2) {
-                return  num2 - num1;
-            }
-        });
+        PriorityQueue<Integer> queue = new PriorityQueue<Integer>((num1, num2) -> num2 - num1);
         for (int i = 0; i < k; ++i) {
             queue.offer(arr[i]);
         }
